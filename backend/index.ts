@@ -13,12 +13,6 @@ createConnection().then(async connection => {
     
     APP.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
     
-    let test = new Test();
-    test.HeureDebut = Date.parse('12-01-2019 9:00:00');
-    test.HeureFin = Date.parse('12-01-2019 10:00:00');
-    test.Feedback = 'some feedback'
-    await test.save()
-
 
 }).catch(error => console.log("TypeORM connection error: ", error));
 

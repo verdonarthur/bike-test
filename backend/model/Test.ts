@@ -1,30 +1,36 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable, BaseEntity} from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BaseEntity,
+  ManyToOne
+} from 'typeorm';
+import { Edition } from './Edition';
+import { Product } from './Prod';
 
-@Entity()
-export class Test extends BaseEntity{
+@Entity({ name: 'TEST' })
+export class Test extends BaseEntity {
+  @PrimaryGeneratedColumn({ name: 'Num' })
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    Num: number;
-    
-    @Column("timestamp")
-    HeureDebut: number;
-    
-    @Column("timestamp", {nullable:true})
-    HeureFin: number;
+  @Column('timestamp', { name: 'HeureDebut' })
+  startHourDate: Date;
 
-    @Column("text", {nullable:true})
-    Feedback: string;
+  @Column('timestamp', { nullable: true, name: 'HeureFin' })
+  endHourDate: Date;
 
-    // @Column()
-    // JTest: string;
+  @Column('text', { nullable: true, name: 'Feedback' })
+  feedback: string;
 
-    // @Column("text")
-    // Prod: string;
+  @ManyToOne(
+    type => Edition,
+    edition => edition.tests
+  )
+  edition: Edition;
 
-    // @ManyToMany(type => Category, {
-    //     cascade: true
-    // })
-    // @JoinTable()
-    // categories: Category[];
-
+  @ManyToOne(
+    type => Product,
+    product => product.tests
+  )
+  product: Product;
 }
