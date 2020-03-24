@@ -1,9 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Getting Started</title>
+
+    <!--INCLUDE BOOTSTRAP-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--INCLUDE LOCAL SCRIPT-->
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="./dist/build.js"></script>
   </head>
   <body>
-    <script src="./dist/build.js"></script>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Bike Test</a>
+    </header>
+
+    <nav class="nav flex-column">
+      <ul>
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/test">Test</a></li>
+        <li><a href="#/product">Product</a></li>
+        <li><a href="#/edition">Edition</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <div id="homepage">
+        <h2>Homepage</h2>
+        <p>Welcome on homepage</p>
+      </div>
+
+      <div id="testpage">
+        <h2>Test page</h2>
+        <table
+          id="testpage-testtable"
+          class="table table-hover table-responsive"
+        >
+          <thead class="thead-light">
+            <th>id</th>
+            <th>start date</th>
+            <th>end date</th>
+            <th>feedback</th>
+            <th>edition</th>
+            <th>product</th>
+          </thead>
+          <tr class="tmpl tmpl-testrow">
+            <td>{{id}}</td>
+            <td>{{startDate}}</td>
+            <td>{{endDate}}</td>
+            <td>{{feedback}}</td>
+            <td>{{edition}}</td>
+            <td>{{product}}</td>
+          </tr>
+        </table>
+
+        <form id="testpage-formadd">
+          <div class="form-group">
+            <label>start date</label>
+            <input name="startHourDate" class="form-control" type="datetime-local" />
+          </div>
+
+          <div class="form-group">
+            <label>end date</label>
+            <input name="endHourDate" class="form-control" type="datetime-local" />
+          </div>
+
+          <div class="form-group">
+            <label>feedback</label>
+            <textarea name="feedback" class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>edition</label>
+            <input name="edition" class="form-control" type="number" />
+          </div>
+
+          <div class="form-group">
+            <label>product</label>
+            <input name="product" class="form-control" type="number" />
+          </div>
+
+          <input class="btn btn-primary" type="submit" />
+        </form>
+      </div>
+    </main>
+
+    <footer></footer>
   </body>
 </html>

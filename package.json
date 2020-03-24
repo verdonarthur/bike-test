@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "npm run express:start",
-    "webpack:build": "webpack",
-    "webpack:watch": "webpack",
+    "webpack:build": "webpack --mode production",
+    "webpack:watch": "webpack -w --mode development",
     "express:start": "tsc && node build/index.js"
   },
   "keywords": [],

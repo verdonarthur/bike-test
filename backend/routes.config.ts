@@ -2,12 +2,12 @@ import { getAllTest, postOneTest } from './routes/test';
 
 export const RouteConfig = [
   {
-    path: '/tests',
+    path: '/api/tests',
     method: 'get',
     action: getAllTest
   },
   {
-    path: '/tests',
+    path: '/api/tests',
     method: 'post',
     action: postOneTest
   }
