@@ -12,6 +12,10 @@ export async function createOneTest(
   let edition = await Edition.findOne({ id: editionId });
   let product = await Product.findOne({ id: productId });
 
+  if (!edition || !product) {
+    throw new Error('Edition or Product non-existent');
+  }
+
   let newTest = new Test();
   newTest.startHourDate = startHourDate;
   newTest.endHourDate = endHourDate || null;

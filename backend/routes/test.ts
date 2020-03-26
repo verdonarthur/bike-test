@@ -31,7 +31,7 @@ export async function postOneTest(request: Request, response: Response) {
     return;
   } catch (err) {
     console.error(err);
-    response.sendStatus(HTTP_CODE.INTERNAL_SERVER_ERROR);
+    response.status(HTTP_CODE.BAD_REQUEST).send(err.message);
     return;
   }
 }

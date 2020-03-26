@@ -1,11 +1,12 @@
 body {
   display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-columns: 2% 96% 2%;
   grid-template-rows: auto;
   grid-template-areas:
-    'header header header header'
-    'nav main main .'
-    'footer footer footer footer';
+    'header header header'
+    'nav nav nav'
+    '. main .'
+    'footer footer footer';
 }
 
 header {
@@ -23,4 +24,16 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 15% 35% 35% 15%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'header header header header'
+      'nav main main .'
+      'footer footer footer footer';
+  }
 }
