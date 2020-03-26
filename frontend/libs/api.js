@@ -15,7 +15,6 @@ export async function apiRequest(resource, method, payload) {
 
   switch (method) {
     case 'post':
-      // return await $.post(buildedURL, payload, null, 'json');
       return await $.ajax(buildedURL, {
         data: JSON.stringify(payload),
         method: 'POST',

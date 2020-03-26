@@ -4,10 +4,13 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "npm run express:start",
-    "webpack:build": "webpack --mode production",
+    "start": "nodemon build/index.js",
+    "build": "npm run webpack:build && npm run express:build",
+    "watch": "npm run webpack:watch",
     "webpack:watch": "webpack -w --mode development",
-    "express:start": "tsc && node build/index.js"
+    "express:watch": "tsc && nodemon build/index.js",
+    "webpack:build": "webpack --mode production",
+    "express:build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +26,10 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "nodemon": "^2.0.2",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }
